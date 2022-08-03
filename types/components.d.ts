@@ -33,11 +33,8 @@ declare module '@vue/runtime-core' {
     IconExpandRight: typeof import('@icon-park/vue-next')['ExpandRight']
     IconFullScreen: typeof import('@icon-park/vue-next')['FullScreen']
     IconOffScreen: typeof import('@icon-park/vue-next')['OffScreen']
-    Pagination: typeof import('./../src/components/pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ScTable: typeof import('./../src/components/scTable/index.vue')['default']
-    ScTableColumnSetting: typeof import('./../src/components/scTable/columnSetting.vue')['default']
   }
 }
 

@@ -1,27 +1,30 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-05-04 14:41:44
- * @LastEditTime: 2022-07-10 13:05:37
+ * @LastEditTime: 2022-08-10 00:06:14
  * @LastEditors: 贾二小
  * @Description: 
- * @FilePath: /exui/src/layouts/index.vue
+ * @FilePath: /exui/src/layouts/admin.vue
 -->
 <script setup lang="ts">
-  import Menu from './components/menu.vue'
-  import Breadcrumb from './components/breadcrumb.vue'
-  import Footer from './components/footer.vue'
-  import TabBar from './components/tabBar.vue'
-  import Header from './components/header.vue'
-  import menuStore from '@/store/menuStore'
+import Menu from './components/menu.vue'
+import Breadcrumb from './components/breadcrumb.vue'
+import Footer from './components/footer.vue'
+import TabBar from './components/tabBar.vue'
+import Header from './components/header.vue'
+import menuStore from '@/store/menuStore'
+import userStore from '@/store/userStore'
 
-  const route = useRoute()
-  watch(
-    route,
-    () => {
-      menuStore().addHistoryMenu(route)
-    },
-    { immediate: true }
-  )
+const route = useRoute()
+watch(
+  route,
+  () => {
+    menuStore().addHistoryMenu(route)
+  },
+  { immediate: true },
+)
+
+await Promise.all([userStore().getUserInfo(), menuStore().getMenus()])
 </script>
 
 <template>
@@ -41,10 +44,10 @@
         <el-header class="flex items-center" height="2.5rem">
           <tab-bar />
         </el-header>
-        <el-scrollbar>
-          <el-main class="bg-gray-50">
+        <el-scrollbar class="bg-gray-50">
+          <el-main>
             <router-view #default="{ Component, route }">
-              <component :is="Component" />
+              <component :is="Component" class="gap-2.5" />
             </router-view>
           </el-main>
         </el-scrollbar>

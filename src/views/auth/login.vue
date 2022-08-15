@@ -1,28 +1,35 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-02 00:06:51
- * @LastEditTime: 2022-08-03 09:41:02
+ * @LastEditTime: 2022-08-09 23:50:41
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/login.vue
+ * @FilePath: /exui/src/views/auth/login.vue
 -->
 <script setup lang="ts">
-  import { login } from '@/apis/userApi'
+  import { login } from '@/apis/auth'
   import { CacheEnum } from '@/enum/cacheEnum'
-  import userStroe from '@/store/userStroe'
+  import userStroe from '@/store/userStore'
+  import menuStroe from '@/store/menuStore'
   import store from '@/utils/store'
 
   const router = useRouter()
 
   const form = ref({
-    account: '1',
-    password: '1',
+    account: 'admin@example.com',
+    password: '123456',
   })
 
   const submint = async () => {
     const data = await login(form.value).then((r) => r.data)
     store.set(CacheEnum.TOKEN_NAME, data.token)
-    userStroe().getUserInfo()
+    //userStroe().setUserInfo(data.user)
+    menuStroe().getMenus()
     router.push({ name: 'home' })
+  }
+</script>
+<script lang="ts">
+  export default {
+    route: { name: 'login', path: '/login', meta: { title: '登录' } },
   }
 </script>
 <template>

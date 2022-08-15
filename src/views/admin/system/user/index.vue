@@ -1,17 +1,72 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-07-30 15:41:59
+ * @LastEditTime: 2022-08-14 18:39:56
  * @LastEditors: 贾二小
  * @FilePath: /exui/src/views/admin/system/user/index.vue
 -->
 <script lang="ts">
-  export default {
-    route: { name: 'system.user', path: '/system/user', meta: { title: '用户管理' } },
-  }
+export default {
+  route: { name: 'user', path: '/user', meta: { title: '用户管理' } },
+}
 </script>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useUser from '@/composables/useUser'
+const { load, users } = useUser()
 
-<template>User</template>
+const params = {
+  page: 1,
+  per_page: 5,
+}
+await load(params)
+
+const currentChange = async (num: number) => {
+  params.page = num
+  await load(params)
+}
+const sizeChange = async (num: number) => {
+  params.per_page = num
+  await load(params)
+}
+
+const userTableColumns = [
+  { prop: 'id', label: 'ID', align: 'center', width: 80 },
+  { prop: 'name', label: '昵称', search: true },
+  { prop: 'email', label: '邮箱', width: 300, search: true },
+  {
+    prop: 'sex',
+    label: '性别',
+    align: 'center',
+    type: 'radio',
+    options: [
+      ['男', 1],
+      ['女', 2],
+    ],
+    width: 80,
+    filters: [
+      {
+        text: '男',
+        value: 1,
+      },
+      {
+        text: '女',
+        value: 2,
+      },
+    ],
+  },
+  { prop: 'created_at', label: '注册时间', type: 'date', width: 120 },
+  { prop: 'updated_at', label: '更新时间', type: 'date', width: 120 },
+] as TableColumnsType[]
+</script>
+
+<template>
+  <ExTable :data="users?.data" :columns="userTableColumns" :button-width="100" />
+
+  <ExPagination
+    :total="users?.meta.total"
+    :size="users?.meta.per_page"
+    @change="currentChange"
+    @sizeChange="sizeChange" />
+</template>
 
 <style lang="scss"></style>

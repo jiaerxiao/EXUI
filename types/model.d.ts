@@ -2,12 +2,13 @@
  * @Author: 贾二小 jiaerxiao@outlook.com
  * @Date: 2022-07-01 22:26:59
  * @LastEditors: 贾二小
- * @LastEditTime: 2022-07-07 22:51:43
+ * @LastEditTime: 2022-08-09 18:33:53
  * @FilePath: /exui/types/model.d.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 
 interface MenuModel {
+  id?: number
+  pid?: number
   name: string
   path?: string
   meta?: {
@@ -22,37 +23,47 @@ interface MenuModel {
   }
   children?: MenuModel[]
 }
-
-interface UserModel {
+//用户模型
+type UserModel = {
+  avatar: string
+  permissions: string[]
   id: number
   name: string
   sex: number
   email: string
   real_name?: any
   home?: any
-  weibo?: any
   wechat?: any
-  github?: any
-  qq?: any
-  wakatime?: any
   email_verified_at: string
   mobile_verified_at?: any
   created_at: string
   updated_at: string
   lock?: any
-  credit1?: any
-  credit2?: any
-  credit3?: any
-  credit4?: any
-  credit5?: any
-  credit6?: any
   favour_count: number
   favorite_count: number
-  avatar: string
-  permissions: string[]
   is_super_admin: boolean
+  roles: RoleModel[]
 }
-
+//角色模型
+type RoleModel = {
+  id: number
+  name: string
+  site_id: number
+  guard_name: string
+  created_at: string
+  updated_at: string
+  permissions: PermissionModel[]
+}
+//权限模型
+type PermissionModel = {
+  id: number
+  title: string
+  name: string
+  module: string
+  guard_name: string
+  created_at: string
+  updated_at: string
+}
 interface IUserModel {
   user?: UserModel
   menu?: MenuModel[]

@@ -1,7 +1,14 @@
-import { RouteEnum } from '../../enum/routeEnum'
-import { CacheEnum } from '../../enum/cacheEnum'
+/*
+ * @Author: 贾二小
+ * @Date: 2022-04-21 21:39:09
+ * @LastEditTime: 2022-08-09 23:48:57
+ * @LastEditors: 贾二小
+ * @FilePath: /exui/src/plugins/axios/Axios.ts
+ */
+import { RouteEnum } from '@/enum/routeEnum'
+import { CacheEnum } from '@/enum/cacheEnum'
 import store from '@/utils/store'
-import router from '@/router'
+import router from '@/router/register'
 import axios, { AxiosRequestConfig } from 'axios'
 import errorStore from '@/store/errorStore'
 
@@ -31,7 +38,7 @@ export default class Axios {
   private interceptorsRequest() {
     this.instance.interceptors.request.use(
       (config: AxiosRequestConfig) => {
-        errorStore().resetErrors()
+        errorStore().resetError()
         config.headers = {
           Accept: 'application/json',
           Authorization: `Bearer ${store.get(CacheEnum.TOKEN_NAME)}`,

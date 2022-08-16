@@ -1,11 +1,12 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-04-21 22:08:13
- * @LastEditTime: 2022-08-09 18:36:59
+ * @LastEditTime: 2022-08-15 23:09:41
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/store/userStore.ts
+ * @FilePath: /EXUI/src/store/userStore.ts
  */
 import { currentUserInfo } from '@/apis/user'
+import { isLogin } from '@/utils/helper'
 import { defineStore } from 'pinia'
 
 export default defineStore('user', {
@@ -17,11 +18,13 @@ export default defineStore('user', {
   },
   actions: {
     async getUserInfo() {
-      this.info = await currentUserInfo()
-      this.permissions = this.info.roles.reduce((permissions: PermissionModel[], role: RoleModel) => {
-        permissions.push(...role.permissions)
-        return permissions
-      }, [])
+      if (isLogin()) {
+        this.info = await currentUserInfo()
+        this.permissions = this.info.roles.reduce((permissions: PermissionModel[], role: RoleModel) => {
+          permissions.push(...role.permissions)
+          return permissions
+        }, [])
+      }
     },
   },
 })

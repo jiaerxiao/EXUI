@@ -1,9 +1,9 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-08-09 00:41:17
- * @LastEditTime: 2022-08-09 17:52:15
+ * @LastEditTime: 2022-08-16 17:25:30
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/utils/helper.ts
+ * @FilePath: /EXUI/src/utils/helper.ts
  */
 import { CacheEnum } from '@/enum/cacheEnum'
 import router from '@/router/register'
@@ -70,7 +70,7 @@ export function className() {
 }
 
 /**
- * 数组转树结构
+ * 数组数据转树形结构数据
  * @param data 数据列表
  * @param pid 父级ID
  * @returns

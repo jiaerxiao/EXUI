@@ -1,11 +1,14 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-04 20:31:10
- * @LastEditTime: 2022-07-08 13:10:52
+ * @LastEditTime: 2022-08-16 16:41:16
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/layouts/components/footer.vue
+ * @FilePath: /EXUI/src/layouts/components/footer.vue
 -->
 <script setup lang="ts"></script>
 <template>
-  <div class="flex items-center text-zinc-800 text-sm">copyright © 2021~2022 ipsoul.com all rights reserved.</div>
+  <div class="h-full flex items-center text-sm">
+    <span>copyright © 2021~2022 ipsoul.com all rights reserved.</span>
+  </div>
 </template>
+<style lang="scss" scoped></style>

@@ -1,9 +1,9 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-02 00:06:51
- * @LastEditTime: 2022-08-13 16:54:28
+ * @LastEditTime: 2022-08-15 19:58:39
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/admin/home.vue
+ * @FilePath: /EXUI/src/views/admin/home.vue
 -->
 <script lang="ts">
 export default {
@@ -110,5 +110,3 @@ const optionPie = {
     </el-card>
   </div>
 </template>
-
-<style lang="scss"></style>

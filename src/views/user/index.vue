@@ -1,9 +1,9 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-14 18:39:56
+ * @LastEditTime: 2022-08-16 16:34:12
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/admin/system/user/index.vue
+ * @FilePath: /EXUI/src/views/user/index.vue
 -->
 <script lang="ts">
 export default {
@@ -60,13 +60,15 @@ const userTableColumns = [
 </script>
 
 <template>
-  <ExTable :data="users?.data" :columns="userTableColumns" :button-width="100" />
+  <div class="">
+    <ExTable :data="users?.data" :columns="userTableColumns" :button-width="100" />
 
-  <ExPagination
-    :total="users?.meta.total"
-    :size="users?.meta.per_page"
-    @change="currentChange"
-    @sizeChange="sizeChange" />
+    <ExPagination
+      :total="users?.meta.total"
+      :size="users?.meta.per_page"
+      @change="currentChange"
+      @sizeChange="sizeChange" />
+  </div>
 </template>
 
 <style lang="scss"></style>

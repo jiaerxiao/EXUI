@@ -2,8 +2,8 @@
  * @Author: 贾二小 jiaerxiao@outlook.com
  * @Date: 2022-07-01 22:26:59
  * @LastEditors: 贾二小
- * @LastEditTime: 2022-08-09 18:33:53
- * @FilePath: /exui/types/model.d.ts
+ * @LastEditTime: 2022-08-16 00:24:45
+ * @FilePath: /EXUI/types/model.d.ts
  */
 
 interface MenuModel {
@@ -11,9 +11,10 @@ interface MenuModel {
   pid?: number
   name: string
   path?: string
+  redirect?: string
   meta?: {
     title?: string
-    icon?: IconType
+    icon?: any
     type?: string
     affix?: boolean
     auth?: boolean

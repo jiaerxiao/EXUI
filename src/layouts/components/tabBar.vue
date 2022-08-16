@@ -1,10 +1,10 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-04 20:45:43
- * @LastEditTime: 2022-08-14 17:33:37
+ * @LastEditTime: 2022-08-16 16:38:52
  * @LastEditors: 贾二小
  * @Description: 
- * @FilePath: /exui/src/layouts/components/tabBar.vue
+ * @FilePath: /EXUI/src/layouts/components/tabBar.vue
 -->
 <script setup lang="ts">
 import menuStore from '@/store/menuStore'
@@ -41,10 +41,14 @@ ul {
     color: var(--el-menu-active-color);
   }
   li {
+    background-color: var(--el-bg-color);
     &:hover {
-      background-color: var(--el-menu-hover-bg-color);
+      background-color: var(--el-hover-bg-color);
     }
-    @apply flex items-center pl-2 pr-2 flex-shrink-0 rounded-md cursor-pointer bg-white text-[18px];
+    a {
+      color: var(--el-text-color);
+    }
+    @apply flex items-center pl-4 pr-4 pt-1.5 pb-1 rounded-sm cursor-pointer  text-sm;
     i {
       @apply pl-1 text-gray-600;
     }

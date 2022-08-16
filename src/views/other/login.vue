@@ -1,36 +1,34 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-02 00:06:51
- * @LastEditTime: 2022-08-09 23:50:41
+ * @LastEditTime: 2022-08-16 01:15:57
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/auth/login.vue
+ * @FilePath: /EXUI/src/views/other/login.vue
 -->
 <script setup lang="ts">
-  import { login } from '@/apis/auth'
-  import { CacheEnum } from '@/enum/cacheEnum'
-  import userStroe from '@/store/userStore'
-  import menuStroe from '@/store/menuStore'
-  import store from '@/utils/store'
+import { login } from '@/apis/auth'
+import { CacheEnum } from '@/enum/cacheEnum'
+import userStroe from '@/store/userStore'
+import menuStroe from '@/store/menuStore'
+import store from '@/utils/store'
 
-  const router = useRouter()
+const router = useRouter()
 
-  const form = ref({
-    account: 'admin@example.com',
-    password: '123456',
-  })
+const form = ref({
+  account: 'admin@example.com',
+  password: '123456',
+})
 
-  const submint = async () => {
-    const data = await login(form.value).then((r) => r.data)
-    store.set(CacheEnum.TOKEN_NAME, data.token)
-    //userStroe().setUserInfo(data.user)
-    menuStroe().getMenus()
-    router.push({ name: 'home' })
-  }
+const submint = async () => {
+  const data = await login(form.value).then((r) => r.data)
+  store.set(CacheEnum.TOKEN_NAME, data.token)
+  router.replace('/abort')
+}
 </script>
 <script lang="ts">
-  export default {
-    route: { name: 'login', path: '/login', meta: { title: '登录' } },
-  }
+export default {
+  route: { name: 'login', path: '/login' },
+}
 </script>
 <template>
   <!-- component -->
@@ -43,8 +41,7 @@
               <img
                 class="mx-auto w-48"
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                alt="logo"
-              />
+                alt="logo" />
               <h4 class="text-xl font-semibold mt-1 mb-12 pb-1">XXXX管理系统</h4>
             </div>
             <form>
@@ -55,8 +52,7 @@
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   id="exampleFormControlInput1"
                   v-model="form.account"
-                  placeholder="用户名"
-                />
+                  placeholder="用户名" />
               </div>
               <div class="mb-4">
                 <input
@@ -64,8 +60,7 @@
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   id="exampleFormControlInput1"
                   v-model="form.password"
-                  placeholder="密码"
-                />
+                  placeholder="密码" />
               </div>
               <div class="text-center pt-1 mb-12 pb-1">
                 <button
@@ -74,8 +69,7 @@
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
                   style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)"
-                  @click="submint"
-                >
+                  @click="submint">
                   登 录
                 </button>
               </div>
@@ -84,8 +78,7 @@
         </div>
         <div
           class="hidden md:flex md:items-center md:w-2/5 2lg:w-1/2 rounded-r-lg"
-          style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)"
-        >
+          style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)">
           <div class="text-white px-4 py-6 md:p-12 md:mx-6">
             <h4 class="text-xl font-semibold mb-6">We are more than just a company</h4>
             <p class="text-sm">

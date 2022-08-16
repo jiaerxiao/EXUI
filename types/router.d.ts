@@ -1,18 +1,22 @@
-import { IconType } from '@icon-park/vue-next/es/all'
+/*
+ * @Author: 贾二小
+ * @Date: 2022-08-15 14:48:47
+ * @LastEditTime: 2022-08-16 18:56:40
+ * @LastEditors: 贾二小
+ * @FilePath: /EXUI/types/router.d.ts
+ */
 import 'vue-router'
-import { IMenu } from '#/menu'
-import { IconType } from '@icon-park/vue-next/es/all'
 
 declare module 'vue-router' {
   interface RouteMeta {
     title?: string
     auth?: boolean
-    menu?: IMenu
+    menu?: MenuModel
     enterClass?: string
     leaveClass?: string
     permission?: string
     type?: 'menu' | 'iframe' | 'link' | 'button'
-    icon?: IconType
+    icon?: string
     affix?: boolean
   }
 }

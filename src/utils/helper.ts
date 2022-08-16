@@ -1,7 +1,7 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-08-09 00:41:17
- * @LastEditTime: 2022-08-16 17:25:30
+ * @LastEditTime: 2022-08-16 18:45:07
  * @LastEditors: 贾二小
  * @FilePath: /EXUI/src/utils/helper.ts
  */
@@ -56,10 +56,10 @@ export function request(fn: (args: any) => Promise<any>) {
  * @param site 站点
  * @returns
  */
-export function access(name: string, site: SiteModel): boolean {
+export function access(name: string): boolean {
   const storeUser = useStore()
 
-  if (isSuperAdmin() || site.user_id == storeUser.info?.id) return true
+  if (isSuperAdmin()) return true
 
   return Boolean(storeUser.permissions.find((permission) => permission.name == name))
 }

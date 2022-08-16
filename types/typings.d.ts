@@ -1,9 +1,9 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-04-21 21:48:19
- * @LastEditTime: 2022-08-13 23:44:01
+ * @LastEditTime: 2022-08-16 18:57:55
  * @LastEditors: 贾二小
- * @FilePath: /exui/types/typings.d.ts
+ * @FilePath: /EXUI/types/typings.d.ts
  */
 interface FormFieldType {
   title: string
@@ -40,4 +40,3 @@ interface TableButton {
   action?: (model: any) => void
   component?: any
 }
-s

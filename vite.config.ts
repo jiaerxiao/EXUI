@@ -1,3 +1,10 @@
+/*
+ * @Author: 贾二小
+ * @Date: 2022-08-15 14:48:47
+ * @LastEditTime: 2022-08-16 18:59:09
+ * @LastEditors: 贾二小
+ * @FilePath: /EXUI/vite.config.ts
+ */
 import { defineConfig, loadEnv } from 'vite'
 import alias from './vite/alias'
 import { parseEnv } from './vite/util'
@@ -10,7 +17,7 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     plugins: [...setupPlugins(isBuild, env), visualizer()],
-    base: isBuild ? '/' : '/',
+    base: '/',
     resolve: {
       alias,
     },

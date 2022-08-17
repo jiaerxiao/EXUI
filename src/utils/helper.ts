@@ -1,9 +1,9 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-08-09 00:41:17
- * @LastEditTime: 2022-08-16 18:45:07
+ * @LastEditTime: 2022-08-16 21:37:02
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/utils/helper.ts
+ * @FilePath: /exui/src/utils/helper.ts
  */
 import { CacheEnum } from '@/enum/cacheEnum'
 import router from '@/router/register'
@@ -33,7 +33,7 @@ export async function logout() {
  */
 export async function loginCallback(token: string) {
   store.set(CacheEnum.TOKEN_NAME, token)
-  location.href = store.get(CacheEnum.REDIRECT_ROUTE_NAME, '/')
+  location.href = store.get(CacheEnum.REDIRECT_ROUTE_NAME)
 }
 
 /**

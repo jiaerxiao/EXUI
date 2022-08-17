@@ -1,10 +1,10 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-05-04 14:41:44
- * @LastEditTime: 2022-08-16 16:38:02
+ * @LastEditTime: 2022-08-16 20:15:13
  * @LastEditors: 贾二小
  * @Description: 
- * @FilePath: /EXUI/src/layouts/index.vue
+ * @FilePath: /exui/src/layouts/index.vue
 -->
 <script setup lang="ts">
 import Menu from './components/menu.vue'
@@ -71,6 +71,7 @@ watch(
   --el-header-padding: 0 10px;
   .ex-main {
     --el-main-padding: 0px 10px 10px 10px;
+    height: calc(100vh - 125px);
   }
 }
 

@@ -1,9 +1,9 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-02 00:06:51
- * @LastEditTime: 2022-08-16 01:15:57
+ * @LastEditTime: 2022-08-16 23:51:13
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/views/other/login.vue
+ * @FilePath: /exui/src/views/other/login.vue
 -->
 <script setup lang="ts">
 import { login } from '@/apis/auth'
@@ -23,11 +23,6 @@ const submint = async () => {
   const data = await login(form.value).then((r) => r.data)
   store.set(CacheEnum.TOKEN_NAME, data.token)
   router.replace('/abort')
-}
-</script>
-<script lang="ts">
-export default {
-  route: { name: 'login', path: '/login' },
 }
 </script>
 <template>

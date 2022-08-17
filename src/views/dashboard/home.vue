@@ -1,15 +1,10 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-02 00:06:51
- * @LastEditTime: 2022-08-15 19:58:39
+ * @LastEditTime: 2022-08-16 23:51:01
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/views/admin/home.vue
+ * @FilePath: /exui/src/views/dashboard/home.vue
 -->
-<script lang="ts">
-export default {
-  route: { name: 'home', path: '/home', meta: { title: '工作台' } },
-}
-</script>
 <script setup lang="ts">
 const optionBar = {
   title: {

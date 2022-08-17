@@ -2,8 +2,8 @@
  * @Author: 贾二小 jiaerxiao@outlook.com
  * @Date: 2022-07-01 22:26:59
  * @LastEditors: 贾二小
- * @LastEditTime: 2022-08-16 00:24:45
- * @FilePath: /EXUI/types/model.d.ts
+ * @LastEditTime: 2022-08-16 21:42:21
+ * @FilePath: /exui/types/model.d.ts
  */
 
 interface MenuModel {
@@ -69,18 +69,4 @@ interface IUserModel {
   user?: UserModel
   menu?: MenuModel[]
   permissions?: string[]
-}
-
-interface RoleModel {
-  id: number
-  created_at: string
-  guard_name: string
-  name: string
-  site_id: number
-  title: string
-  updated_at: string
-  permissions: {
-    title: string
-    name: string
-  }[]
 }

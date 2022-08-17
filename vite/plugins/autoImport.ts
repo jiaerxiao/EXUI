@@ -1,7 +1,14 @@
+/*
+ * @Author: 贾二小
+ * @Date: 2022-08-16 20:07:23
+ * @LastEditTime: 2022-08-16 22:14:54
+ * @LastEditors: 贾二小
+ * @FilePath: /exui/vite/plugins/autoImport.ts
+ */
 import { Plugin } from 'vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver, VueUseComponentsResolver } from 'unplugin-vue-components/resolvers'
 
 //自动导入插件
 export default (plugins: Plugin[], isBuild: boolean, env: ImportMetaEnv) => {
@@ -18,6 +25,7 @@ export default (plugins: Plugin[], isBuild: boolean, env: ImportMetaEnv) => {
       resolvers: [
         //element-plus组件按需导入
         ElementPlusResolver(),
+        VueUseComponentsResolver(),
         //针对iconpark图标按需导入
         (componentName) => {
           if (componentName.startsWith('Icon')) {

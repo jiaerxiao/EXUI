@@ -1,15 +1,10 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-16 16:34:12
+ * @LastEditTime: 2022-08-16 23:51:24
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/views/user/index.vue
+ * @FilePath: /exui/src/views/user/index.vue
 -->
-<script lang="ts">
-export default {
-  route: { name: 'user', path: '/user', meta: { title: '用户管理' } },
-}
-</script>
 <script setup lang="ts">
 import useUser from '@/composables/useUser'
 const { load, users } = useUser()

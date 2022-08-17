@@ -1,18 +1,13 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-07 20:42:50
- * @LastEditTime: 2022-07-30 15:13:57
+ * @LastEditTime: 2022-08-16 23:51:07
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/admin/abort.vue
+ * @FilePath: /exui/src/views/other/abort.vue
 -->
 <script setup lang="ts">
-  import env from '@/utils/env'
-  import packageJson from '@/../package.json'
-</script>
-<script lang="ts">
-  export default {
-    route: { name: 'abort', path: '/abort', meta: { title: '关于' } },
-  }
+import env from '@/utils/env'
+import packageJson from '@/../package.json'
 </script>
 <template>
   <el-row :gutter="15">

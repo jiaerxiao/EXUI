@@ -1,17 +1,15 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-08-09 00:48:04
- * @LastEditTime: 2022-08-16 10:09:03
+ * @LastEditTime: 2022-08-16 23:49:06
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/router/register/guard.ts
+ * @FilePath: /exui/src/router/register/guard.ts
  */
 import { RouteLocationNormalized, Router, RouteRecordRaw } from 'vue-router'
 import errorStore from '@/store/errorStore'
 import { isLogin } from '@/utils/helper'
-import getRoutes from './view'
 import userStore from '@/store/userStore'
 import menuStore from '@/store/menuStore'
-import env from '@/utils/env'
 
 class Guard {
   constructor(private router: Router) {}
@@ -41,7 +39,6 @@ class Guard {
 
     if (this.isLoadRoute && isLogin()) {
       this.isLoadRoute = false
-      let routes = getRoutes()
       //加载用户信息和菜单
       await Promise.all([userStore().getUserInfo(), menuStore().getMenus()])
       //注册路由
@@ -52,6 +49,7 @@ class Guard {
         component: () => import('@/layouts/index.vue'),
         children: [],
       }
+      let routes = this.getRoutes()
       menuStore().menus.forEach((m) => {
         //是否找到对应的路由
         routes
@@ -76,11 +74,10 @@ class Guard {
    * @returns
    */
   private getRoutes() {
-    let views = import.meta.globEager('../../views/**/*.vue')
+    let views = import.meta.glob('../../views/**/*.vue')
     const routes = [] as RouteRecordRaw[]
     Object.entries(views).forEach(([file, module]) => {
-      const route = this.getRouteByModule(file, module)
-      if (!route.name.startsWith('auth')) routes.push(route)
+      routes.push(this.getRouteByModule(file, module))
     })
     return routes
   }
@@ -93,13 +90,12 @@ class Guard {
    */
   private getRouteByModule(file: string, module: { [key: string]: any }) {
     const name = file.replace(/.+views\/|\.vue/gi, '')
-    const route = {
+    return {
       name: name.replace('/', '.'),
       path: `/${name}`,
-      component: module.default,
+      component: module,
       meta: {},
     } as RouteRecordRaw
-    return Object.assign(route, module.default?.route)
   }
 }
 

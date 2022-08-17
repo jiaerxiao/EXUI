@@ -1,7 +1,7 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-04 20:45:43
- * @LastEditTime: 2022-08-16 16:38:52
+ * @LastEditTime: 2022-08-17 14:45:20
  * @LastEditors: 贾二小
  * @Description: 
  * @FilePath: /EXUI/src/layouts/components/tabBar.vue
@@ -26,7 +26,7 @@ const removeMenu = (menu: RouteLocationNormalized) => {
     <li
       v-for="item in menus"
       :class="{ 'is-active': $route.name == item.name }"
-      class="animate__animated animate__fadeInRight animate__faster">
+      class="animate__animated animate__fadeInRights">
       <router-link :to="{ name: item.name as string }">
         {{ item.meta.title }}
       </router-link>
@@ -41,9 +41,10 @@ ul {
     color: var(--el-menu-active-color);
   }
   li {
-    background-color: var(--el-bg-color);
+    transition-duration: var(--el-transition-duration);
+    background-color: var(--el-menu-bg-color);
     &:hover {
-      background-color: var(--el-hover-bg-color);
+      background-color: var(--el-menu-hover-bg-color);
     }
     a {
       color: var(--el-text-color);

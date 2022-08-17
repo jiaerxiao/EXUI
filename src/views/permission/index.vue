@@ -1,12 +1,12 @@
 <!--
  * @Author: 贾二小
- * @Date: 2022-08-17 13:37:29
- * @LastEditTime: 2022-08-17 17:39:59
+ * @Date: 2022-08-17 17:32:23
+ * @LastEditTime: 2022-08-17 17:42:59
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/views/role/index.vue
+ * @FilePath: /EXUI/src/views/permission/index.vue
 -->
 <script setup lang="ts">
-const { load, roles } = useRole()
+const { load, permissions } = usePermission()
 
 const params = {
   page: 1,
@@ -36,11 +36,11 @@ const userTableColumns = [
 
 <template>
   <div class="">
-    <ExTable :data="roles?.data" :columns="userTableColumns" :button-width="100" />
+    <ExTable :data="permissions?.data" :columns="userTableColumns" :button-width="100" />
 
     <ExPagination
-      :total="roles?.meta.total"
-      :size="roles?.meta.per_page"
+      :total="permissions?.meta.total"
+      :size="permissions?.meta.per_page"
       @change="currentChange"
       @sizeChange="sizeChange" />
   </div>

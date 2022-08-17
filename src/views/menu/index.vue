@@ -1,12 +1,50 @@
 <!--
  * @Author: 贾二小
- * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-16 23:50:48
+ * @Date: 2022-08-17 13:37:29
+ * @LastEditTime: 2022-08-17 18:46:31
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/menu/index.vue
+ * @FilePath: /EXUI/src/views/menu/index.vue
 -->
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { load, menus } = useMenu()
 
-<template><div>Menu</div></template>
+const params = {
+  page: 1,
+  per_page: 5,
+}
+await load(params)
+
+const currentChange = async (num: number) => {
+  params.page = num
+  await load(params)
+}
+const sizeChange = async (num: number) => {
+  params.per_page = num
+  await load(params)
+}
+
+const userTableColumns = [
+  { prop: 'id', label: 'ID', align: 'center', width: 80 },
+  { prop: 'pid', label: 'PID', width: 300, search: true },
+  { prop: 'name', label: '名称', width: 300, search: true },
+  { prop: 'path', label: '地址', width: 300, search: true },
+  { prop: 'meta.icon', label: '图标' },
+  { prop: 'meta.title', label: '标题' },
+  { prop: 'created_at', label: '创建时间', type: 'date', width: 120 },
+  { prop: 'updated_at', label: '更新时间', type: 'date', width: 120 },
+] as TableColumnsType[]
+</script>
+
+<template>
+  <div class="">
+    <ExTable :data="menus?.data" :columns="userTableColumns" :button-width="100" />
+
+    <ExPagination
+      :total="menus?.meta.total"
+      :size="menus?.meta.per_page"
+      @change="currentChange"
+      @sizeChange="sizeChange" />
+  </div>
+</template>
 
 <style lang="scss"></style>

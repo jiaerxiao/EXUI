@@ -1,12 +1,11 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-16 23:51:24
+ * @LastEditTime: 2022-08-17 17:39:49
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/user/index.vue
+ * @FilePath: /EXUI/src/views/user/index.vue
 -->
 <script setup lang="ts">
-import useUser from '@/composables/useUser'
 const { load, users } = useUser()
 
 const params = {

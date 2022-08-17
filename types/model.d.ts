@@ -2,8 +2,8 @@
  * @Author: 贾二小 jiaerxiao@outlook.com
  * @Date: 2022-07-01 22:26:59
  * @LastEditors: 贾二小
- * @LastEditTime: 2022-08-16 21:42:21
- * @FilePath: /exui/types/model.d.ts
+ * @LastEditTime: 2022-08-17 17:30:24
+ * @FilePath: /EXUI/types/model.d.ts
  */
 
 interface MenuModel {
@@ -28,7 +28,7 @@ interface MenuModel {
 type UserModel = {
   avatar: string
   permissions: string[]
-  id: number
+  id?: number
   name: string
   sex: number
   email: string
@@ -37,8 +37,8 @@ type UserModel = {
   wechat?: any
   email_verified_at: string
   mobile_verified_at?: any
-  created_at: string
-  updated_at: string
+  created_at?: string
+  updated_at?: string
   lock?: any
   favour_count: number
   favorite_count: number
@@ -46,27 +46,38 @@ type UserModel = {
   roles: RoleModel[]
 }
 //角色模型
-type RoleModel = {
-  id: number
-  name: string
-  site_id: number
+interface RoleModel {
+  id?: number
   guard_name: string
-  created_at: string
-  updated_at: string
-  permissions: PermissionModel[]
+  name: string
+  title: string
+  updated_at?: string
+  created_at?: string
+  permissions?: PermissionModel[]
 }
+
 //权限模型
 type PermissionModel = {
-  id: number
+  id?: number
   title: string
   name: string
   module: string
   guard_name: string
-  created_at: string
-  updated_at: string
+  created_at?: string
+  updated_at?: string
 }
 interface IUserModel {
-  user?: UserModel
-  menu?: MenuModel[]
+  user: UserModel
+  menu: MenuModel[]
   permissions?: string[]
+}
+
+interface ConfigModel {
+  id?: number
+  key: string
+  value: string
+  title: string
+  category: string
+  updated_at?: string
+  created_at?: string
 }

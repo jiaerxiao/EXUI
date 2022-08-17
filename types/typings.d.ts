@@ -1,7 +1,7 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-04-21 21:48:19
- * @LastEditTime: 2022-08-16 18:57:55
+ * @LastEditTime: 2022-08-17 18:15:22
  * @LastEditors: 贾二小
  * @FilePath: /EXUI/types/typings.d.ts
  */
@@ -29,6 +29,7 @@ interface TableColumnsType {
   search?: boolean
   fixed?: boolean
   tag_field?: string
+  field?: string
   filters?: { text: string; value: string }[]
   showOverflowTooltip?: boolean
 }

@@ -1,9 +1,9 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-08-13 16:02:58
- * @LastEditTime: 2022-08-13 16:03:03
+ * @LastEditTime: 2022-08-17 16:13:22
  * @LastEditors: 贾二小
- * @FilePath: /exui/types/api.d.ts
+ * @FilePath: /EXUI/types/api.d.ts
  */
 //请求响应结构
 interface ResponseResult<T> {

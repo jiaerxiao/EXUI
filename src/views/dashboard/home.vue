@@ -1,9 +1,9 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-02 00:06:51
- * @LastEditTime: 2022-08-16 23:51:01
+ * @LastEditTime: 2022-08-18 14:54:40
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/views/dashboard/home.vue
+ * @FilePath: /EXUI/src/views/dashboard/home.vue
 -->
 <script setup lang="ts">
 const optionBar = {
@@ -92,15 +92,13 @@ const optionPie = {
 
 <template>
   <div class="grid grid-cols-2">
-    <el-card>
+    <el-card shadow="hover">
       <echarts-bar :options="optionBar" class="h-72 w-full" />
     </el-card>
-
-    <el-card>
+    <el-card shadow="hover">
       <echarts-pie :options="optionPie" class="h-72 w-full" />
     </el-card>
-
-    <el-card class="col-span-2">
+    <el-card shadow="hover" class="col-span-2">
       <echarts-line :options="optionLine" class="h-72 w-full" />
     </el-card>
   </div>

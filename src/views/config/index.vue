@@ -1,7 +1,7 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-17 17:39:37
+ * @LastEditTime: 2022-08-18 14:54:20
  * @LastEditors: 贾二小
  * @FilePath: /EXUI/src/views/config/index.vue
 -->
@@ -35,15 +35,15 @@ const userTableColumns = [
 </script>
 
 <template>
-  <div class="">
+  <el-card shadow="hover">
     <ExTable :data="configs?.data" :columns="userTableColumns" :button-width="100" />
-
     <ExPagination
       :total="configs?.meta.total"
       :size="configs?.meta.per_page"
       @change="currentChange"
       @sizeChange="sizeChange" />
-  </div>
+    <
+  </el-card>
 </template>
 
 <style lang="scss"></style>

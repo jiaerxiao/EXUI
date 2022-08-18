@@ -1,7 +1,7 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-08-17 17:32:23
- * @LastEditTime: 2022-08-17 17:42:59
+ * @LastEditTime: 2022-08-18 14:55:06
  * @LastEditors: 贾二小
  * @FilePath: /EXUI/src/views/permission/index.vue
 -->
@@ -35,15 +35,14 @@ const userTableColumns = [
 </script>
 
 <template>
-  <div class="">
+  <el-card shadow="hover">
     <ExTable :data="permissions?.data" :columns="userTableColumns" :button-width="100" />
-
     <ExPagination
       :total="permissions?.meta.total"
       :size="permissions?.meta.per_page"
       @change="currentChange"
       @sizeChange="sizeChange" />
-  </div>
+  </el-card>
 </template>
 
 <style lang="scss"></style>

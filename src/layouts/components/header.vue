@@ -1,9 +1,9 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-06 20:21:14
- * @LastEditTime: 2022-08-16 23:56:49
+ * @LastEditTime: 2022-08-18 18:11:19
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/layouts/components/header.vue
+ * @FilePath: /EXUI/src/layouts/components/header.vue
 -->
 <script setup lang="ts">
 import menuStore from '@/store/menuStore'

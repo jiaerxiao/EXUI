@@ -1,7 +1,7 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-08-17 13:37:29
- * @LastEditTime: 2022-08-17 17:39:59
+ * @LastEditTime: 2022-08-18 14:55:15
  * @LastEditors: 贾二小
  * @FilePath: /EXUI/src/views/role/index.vue
 -->
@@ -35,15 +35,14 @@ const userTableColumns = [
 </script>
 
 <template>
-  <div class="">
+  <el-card shadow="hover">
     <ExTable :data="roles?.data" :columns="userTableColumns" :button-width="100" />
-
     <ExPagination
       :total="roles?.meta.total"
       :size="roles?.meta.per_page"
       @change="currentChange"
       @sizeChange="sizeChange" />
-  </div>
+  </el-card>
 </template>
 
 <style lang="scss"></style>

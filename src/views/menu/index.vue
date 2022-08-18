@@ -25,9 +25,9 @@ const sizeChange = async (num: number) => {
 
 const userTableColumns = [
   { prop: 'id', label: 'ID', align: 'center', width: 80 },
-  { prop: 'pid', label: 'PID', width: 300, search: true },
-  { prop: 'name', label: '名称', width: 300, search: true },
-  { prop: 'path', label: '地址', width: 300, search: true },
+  { prop: 'pid', label: 'PID', align: 'center', width: 80 },
+  { prop: 'name', label: '名称', search: true },
+  { prop: 'path', label: '地址', search: true },
   { prop: 'meta.icon', label: '图标' },
   { prop: 'meta.title', label: '标题' },
   { prop: 'created_at', label: '创建时间', type: 'date', width: 120 },

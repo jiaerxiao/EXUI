@@ -33,8 +33,8 @@ specifiers:
   sortablejs: ^1.15.0
   tailwindcss: ^3.1.8
   typescript: ^4.7.4
-  unplugin-auto-import: ^0.9.5
-  unplugin-vue-components: ^0.21.2
+  unplugin-auto-import: ^0.11.1
+  unplugin-vue-components: ^0.22.4
   vite: ^3.0.8
   vite-plugin-inspect: ^0.5.1
   vite-plugin-mock: ^2.9.6
@@ -82,8 +82,8 @@ devDependencies:
   sass: 1.54.4
   tailwindcss: 3.1.8
   typescript: 4.7.4
-  unplugin-auto-import: 0.9.5_5srvc5voo2mp7imp3muzc7kr5q
-  unplugin-vue-components: 0.21.2_4wqsqg26w3yhainwlzxjvtwbda
+  unplugin-auto-import: 0.11.1_5srvc5voo2mp7imp3muzc7kr5q
+  unplugin-vue-components: 0.22.4_4wqsqg26w3yhainwlzxjvtwbda
   vite: 3.0.8_sass@1.54.4
   vite-plugin-inspect: 0.5.1_vite@3.0.8
   vite-plugin-mock: 2.9.6_vtvkfohh23dxqesvejvs7zo54i
@@ -2776,8 +2776,8 @@ packages:
       ajv-keywords: 3.5.2_ajv@6.12.6
     dev: true
 
-  /scule/0.2.1:
-    resolution: {integrity: sha512-M9gnWtn3J0W+UhJOHmBxBTwv8mZCan5i1Himp60t6vvZcor0wr+IM0URKmIglsWJ7bRujNAVVN77fp+uZaWoKg==}
+  /scule/0.3.2:
+    resolution: {integrity: sha512-zIvPdjOH8fv8CgrPT5eqtxHQXmPNnV/vHJYffZhE43KZkvULvpCTvOt1HPlFaCZx287INL9qaqrZg34e8NgI4g==}
     dev: true
 
   /semver/6.3.0:
@@ -3024,8 +3024,8 @@ packages:
     resolution: {integrity: sha512-e4+UtA5IRO+ha6hYklwj6r7BjiGMxS0O+UaSg9HbaTefg4kMkzj4tXzEBajRR+wkxf+golgAWKzLbytCUDMJAA==}
     dev: true
 
-  /unimport/0.4.7_wjwc4p2ioha2ojyvdundvc76w4:
-    resolution: {integrity: sha512-V2Pbscd1VSdgWm1/OI2pjtydEOTjE7DDnHZKhpOq7bSUBc1i8+1f6PK8jI1lJ1plRDcSNr0DLtAmtU9NPkFQpw==}
+  /unimport/0.6.7_wjwc4p2ioha2ojyvdundvc76w4:
+    resolution: {integrity: sha512-EMoVqDjswHkU+nD098QYHXH7Mkw7KwGDQAyeRF2lgairJnuO+wpkhIcmCqrD1OPJmsjkTbJ2tW6Ap8St0PuWZA==}
     dependencies:
       '@rollup/pluginutils': 4.2.1
       escape-string-regexp: 5.0.0
@@ -3034,9 +3034,9 @@ packages:
       magic-string: 0.26.2
       mlly: 0.5.12
       pathe: 0.3.4
-      scule: 0.2.1
+      scule: 0.3.2
       strip-literal: 0.4.0
-      unplugin: 0.7.2_wjwc4p2ioha2ojyvdundvc76w4
+      unplugin: 0.9.2_wjwc4p2ioha2ojyvdundvc76w4
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -3049,8 +3049,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /unplugin-auto-import/0.9.5_5srvc5voo2mp7imp3muzc7kr5q:
-    resolution: {integrity: sha512-CskZjMM+p/QZev7y4JgaAFrf63ui4VGS4HrDMm6VIiVjwnmQ0wPugo58GGhYa+W2Hyv6zGffYO6uYHfeVlDZDA==}
+  /unplugin-auto-import/0.11.1_5srvc5voo2mp7imp3muzc7kr5q:
+    resolution: {integrity: sha512-3KMbjc3Sv2h1osgQ16uKmD2XHb8MLK3Lj5Twzo3x2vDexYdNKjVljLZUX+eT5cvh2f1VzJR77dkzDhdEi9+1uw==}
     engines: {node: '>=14'}
     peerDependencies:
       '@vueuse/core': '*'
@@ -3063,8 +3063,8 @@ packages:
       '@vueuse/core': 9.1.0_vue@3.2.37
       local-pkg: 0.4.2
       magic-string: 0.26.2
-      unimport: 0.4.7_wjwc4p2ioha2ojyvdundvc76w4
-      unplugin: 0.7.2_wjwc4p2ioha2ojyvdundvc76w4
+      unimport: 0.6.7_wjwc4p2ioha2ojyvdundvc76w4
+      unplugin: 0.9.2_wjwc4p2ioha2ojyvdundvc76w4
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -3072,8 +3072,8 @@ packages:
       - webpack
     dev: true
 
-  /unplugin-vue-components/0.21.2_4wqsqg26w3yhainwlzxjvtwbda:
-    resolution: {integrity: sha512-HBU+EuesDj/HRs7EtYH7gBACljVhqLylltrCLModRmCToIIrrNvMh54aylUt4AD4qiwylgOx4Vgb9sBlrIcRDw==}
+  /unplugin-vue-components/0.22.4_4wqsqg26w3yhainwlzxjvtwbda:
+    resolution: {integrity: sha512-2rRZcM9OnJGXnYxQNfaceEYuPeVACcWySIjy8WBwIiN3onr980TmA3XE5pRJFt8zoQrUA+c46oyIq96noLqrEQ==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8
@@ -3091,7 +3091,7 @@ packages:
       magic-string: 0.26.2
       minimatch: 5.1.0
       resolve: 1.22.1
-      unplugin: 0.7.2_wjwc4p2ioha2ojyvdundvc76w4
+      unplugin: 0.9.2_wjwc4p2ioha2ojyvdundvc76w4
       vue: 3.2.37
     transitivePeerDependencies:
       - esbuild
@@ -3101,8 +3101,8 @@ packages:
       - webpack
     dev: true
 
-  /unplugin/0.7.2_wjwc4p2ioha2ojyvdundvc76w4:
-    resolution: {integrity: sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==}
+  /unplugin/0.9.2_wjwc4p2ioha2ojyvdundvc76w4:
+    resolution: {integrity: sha512-Wo9lx9rA0O3AWhLYYNZ6DgnNhL5t5r7kV/Jg5BXjTQtY+DEWrD8VLFSaOmKN0tgqZCMqZ+XrzgOe/3DzIO4/SA==}
     peerDependencies:
       esbuild: '>=0.13'
       rollup: ^2.50.0

@@ -1,24 +1,18 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-08-15 14:48:47
- * @LastEditTime: 2022-08-17 18:58:17
+ * @LastEditTime: 2022-08-17 21:10:20
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/src/components/ex/table.vue
+ * @FilePath: /exui/src/components/ex/table.vue
 -->
 <script setup lang="ts">
 import dayjs from 'dayjs'
+import { getPropVal } from '@/utils/helper'
 
 const { data, columns } = defineProps<{
   data?: Record<string, any>[]
   columns: TableColumnsType[]
 }>()
-const getPVal = (row: any, prop: string) => {
-  console.log(row, prop)
-  if (row) {
-    return row['meta']['icon']
-  }
-  return '22'
-}
 </script>
 
 <template>
@@ -52,9 +46,8 @@ const getPVal = (row: any, prop: string) => {
         </el-tag>
       </template>
       <template v-else-if="col.type === 'date'"> {{ dayjs(row[col.prop]).format('YYYY-mm-DD') }} </template>
-
       <template v-else>
-        {{ col.prop.includes('.') ? getPVal(row, col.prop) : row[col.prop] }}
+        {{ col.prop.includes('.') ? getPropVal(col.prop.split('.'), row) : row[col.prop] }}
       </template>
     </el-table-column>
   </el-table>

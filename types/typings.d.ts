@@ -1,9 +1,9 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-04-21 21:48:19
- * @LastEditTime: 2022-08-17 18:15:22
+ * @LastEditTime: 2022-08-17 21:09:43
  * @LastEditors: 贾二小
- * @FilePath: /EXUI/types/typings.d.ts
+ * @FilePath: /exui/types/typings.d.ts
  */
 interface FormFieldType {
   title: string
@@ -29,7 +29,6 @@ interface TableColumnsType {
   search?: boolean
   fixed?: boolean
   tag_field?: string
-  field?: string
   filters?: { text: string; value: string }[]
   showOverflowTooltip?: boolean
 }

@@ -1,7 +1,7 @@
 /*
  * @Author: 贾二小
  * @Date: 2022-08-09 00:41:17
- * @LastEditTime: 2022-08-16 21:37:02
+ * @LastEditTime: 2022-08-17 21:08:47
  * @LastEditors: 贾二小
  * @FilePath: /exui/src/utils/helper.ts
  */
@@ -77,4 +77,14 @@ export function className() {
  */
 export function arrayToTree(data: any[], pid: number = 0): any[] {
   return data.filter((item) => item.pid == pid).map((item) => ({ ...item, children: arrayToTree(data, item.id) }))
+}
+
+/**
+ * 获取prop的值
+ * @param prop
+ * @param row
+ * @returns
+ */
+export function getPropVal(prop: string[], row: any): string {
+  return prop && prop.length > 0 ? getPropVal(prop, row[prop.shift()!]) : row
 }

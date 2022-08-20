@@ -1,7 +1,7 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-18 14:54:20
+ * @LastEditTime: 2022-08-19 18:52:41
  * @LastEditors: 贾二小
  * @FilePath: /EXUI/src/views/config/index.vue
 -->
@@ -42,7 +42,6 @@ const userTableColumns = [
       :size="configs?.meta.per_page"
       @change="currentChange"
       @sizeChange="sizeChange" />
-    <
   </el-card>
 </template>
 

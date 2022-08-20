@@ -1,7 +1,7 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-04 20:45:43
- * @LastEditTime: 2022-08-17 14:45:20
+ * @LastEditTime: 2022-08-20 11:28:58
  * @LastEditors: 贾二小
  * @Description: 
  * @FilePath: /EXUI/src/layouts/components/tabBar.vue
@@ -38,11 +38,12 @@ const removeMenu = (menu: RouteLocationNormalized) => {
 ul {
   @apply flex items-center space-x-2 overflow-x-auto;
   .is-active {
-    color: var(--el-menu-active-color);
+    color: var(--active-color);
   }
   li {
     transition-duration: var(--el-transition-duration);
-    background-color: var(--el-menu-bg-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     &:hover {
       background-color: var(--el-menu-hover-bg-color);
     }

@@ -1,9 +1,10 @@
+import { isLogin } from '@/utils/helper'
 /*
  * @Author: 贾二小
  * @Date: 2022-04-21 21:39:09
- * @LastEditTime: 2022-08-09 23:48:57
+ * @LastEditTime: 2022-08-20 13:42:08
  * @LastEditors: 贾二小
- * @FilePath: /exui/src/plugins/axios/Axios.ts
+ * @FilePath: /EXUI/src/plugins/axios/Axios.ts
  */
 import { RouteEnum } from '@/enum/routeEnum'
 import { CacheEnum } from '@/enum/cacheEnum'
@@ -47,7 +48,7 @@ export default class Axios {
       },
       (error) => {
         return Promise.reject(error)
-      }
+      },
     )
   }
   private interceptorsResponse() {
@@ -66,7 +67,7 @@ export default class Axios {
         switch (status) {
           case 401:
             store.remove(CacheEnum.TOKEN_NAME)
-            router.push({ name: RouteEnum.LOGIN })
+            router.push({ name: 'login' })
             break
           case 422:
             errorStore().setErrors(data.errors)
@@ -78,7 +79,7 @@ export default class Axios {
             if (data.message) ElMessage.error(data.message)
         }
         return Promise.reject(error)
-      }
+      },
     )
   }
 }

@@ -1,7 +1,7 @@
 <!--
  * @Author: 贾二小
  * @Date: 2022-07-30 15:39:07
- * @LastEditTime: 2022-08-18 19:06:09
+ * @LastEditTime: 2022-08-19 18:37:52
  * @LastEditors: 贾二小
  * @FilePath: /EXUI/src/views/user/index.vue
 -->
@@ -69,7 +69,7 @@ const onSearch = (a: string = '1111') => {
         <el-button type="primary">分配角色</el-button>
         <el-button type="primary">权限设置</el-button>
       </div>
-      <div class="flex-none w-64">
+      <div class="flex-none w-72">
         <div class="flex items-center">
           <el-input v-model="input2" class="w-50 m-2" placeholder="Please Input" />
           <el-button type="primary" :icon="Search" @click="onSearch()" />
